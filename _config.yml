@@ -14,7 +14,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: yeeseok, yeeseokoh, oh, yeeseok oh, 呉 利錫, 呉利錫, 오이석 # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: mii_me.jpg 
+icon: mii_me.jpg
 
 url: https://yeeseokoh.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root

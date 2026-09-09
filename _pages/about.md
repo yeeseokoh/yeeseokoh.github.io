@@ -16,6 +16,9 @@ profile:
       <a href="https://github.com/yeeseokoh" title="GitHub">
         <i class="fa-brands fa-github"></i>
       </a>
+      <a href="https://scholar.google.com/citations?user=_Wm3MlMAAAAJ" title="Google Scholar">
+      <i class="ai ai-google-scholar"></i>
+      </a>
     </div>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"

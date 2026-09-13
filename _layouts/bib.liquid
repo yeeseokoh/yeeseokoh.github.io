@@ -2,29 +2,31 @@
 ---
 <div class="row">
   {% if site.enable_publication_thumbnails %}
-    <div class="col col-sm-2 abbr">
-      {%- if entry.abbr -%}
-        {%- if site.data.venues[entry.abbr] -%}
-          {% assign venue_style = null %}
-          {% if site.data.venues[entry.abbr].color != blank %}
-            {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
-          {%- endif -%}
-          <abbr
-            class="badge rounded w-100"
-            {% if venue_style %}
-              {{ venue_style }}
-            {% endif -%}
-          >
-            {% if site.data.venues[entry.abbr].url %}
-              <a href="{{ site.data.venues[entry.abbr].url }}">{{ entry.abbr }}</a>
-            {% else %}
-              <div>{{- entry.abbr -}}</div>
-            {% endif %}
-          </abbr>
-        {% else %}
-          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+    <div class="col-auto abbr">
+      {%- comment -%}
+        Custom publication index badge.
+
+        papers.bib examples:
+          kind={conference}, pubnum={C1}
+          kind={journal},    pubnum={J1}
+          kind={arXiv}                    % blank gray badge
+
+        Colors are read from _data/venues.yml using entry.kind.
+      {%- endcomment -%}
+      {% if entry.kind or entry.pubnum %}
+        {% assign publication_kind = entry.kind | default: 'arXiv' %}
+        {% assign publication_color = '#606b71' %}
+        {% if site.data.venues[publication_kind] and site.data.venues[publication_kind].color != blank %}
+          {% assign publication_color = site.data.venues[publication_kind].color %}
         {% endif %}
+        <abbr
+          class="badge rounded"
+          style="background-color: {{ publication_color }}; min-width: 2.1rem; padding: 0.15rem 0.30rem; font-size: 0.72rem; line-height: 1.15; text-align: center;"
+        >
+          {% if entry.pubnum %}{{ entry.pubnum }}{% else %}&nbsp;{% endif %}
+        </abbr>
       {% endif %}
+
       {% if entry.preview %}
         {% if entry.preview contains '://' %}
           <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
@@ -46,7 +48,7 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col{% else %}col-sm-10{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->

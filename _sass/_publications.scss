@@ -108,6 +108,8 @@
           padding-bottom: 0.25rem;
           margin-left: 0;
 
+          text-transform: none;
+
           &:hover {
             color: var(--global-theme-color);
             border-color: var(--global-theme-color);

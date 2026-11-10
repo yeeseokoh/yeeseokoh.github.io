@@ -17,3 +17,15 @@
 "igarashi":
   - firstname: ["Ayumi", "A."]
     url: https://sites.google.com/site/eigarashayumi/
+
+"becker":
+  - firstname: ["Patrick", "P."]
+    url: https://www.cs.cit.tum.de/en/dss/members/patrick-becker/
+
+"frank":
+  - firstname: ["Fabian", "F."]
+    url: https://www.cs.cit.tum.de/en/dss/members/fabian-frank/
+
+"boehmer":
+  - firstname: ["Niclas", "N."]
+    url: https://hpi.de/en/boehmer/team/niclas-boehmer/

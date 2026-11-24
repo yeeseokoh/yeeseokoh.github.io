@@ -29,3 +29,11 @@
 "boehmer":
   - firstname: ["Niclas", "N."]
     url: https://hpi.de/en/boehmer/team/niclas-boehmer/
+
+"fujii":
+  - firstname: ["Kaito", "K."]
+    url: https://fujiik.github.io/
+
+"sakaue":
+  - firstname: ["Shinsaku", "S."]
+    url: https://ssakaue.github.io/
